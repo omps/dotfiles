@@ -1,0 +1,14 @@
+# example of setting fbdesk icons
+# [Deskop Entry]
+# Icon=the image filename
+# Name=the icon label
+# Exec=what it executes
+# Pos= horiz vert  # position of the icon
+# [end]
+ [Desktop Entry]
+ Name=xterm
+ Exec=/usr/bin/xterm
+ Icon=/usr/share/pixmaps/Terminal.xpm
+ Pos= 20 110
+ [end]
+

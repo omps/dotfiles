@@ -30,7 +30,7 @@
 (setq send-mail-function 'smtpmail-send-it)
 (setq smtpmail-smtp-server "smtp.gmail.com")
 (setq smtpmail-smtp-service 465)
-(setq smtpmail-auth-credentials '(("smtp.gmail.com" 465 "ompnix@gmail.com" "Id3nt1ty")))
+(setq smtpmail-auth-credentials '(("smtp.gmail.com" 465 "username@gmail.com" "password")))
 (setq smtpmail-starttls-credentials '(("smtp.gmail.com" 465 nil nil)))
 
 (add-hook 'perl-mode-hook '(lambda () (local-set-key [f7] 'compile)))

@@ -86,7 +86,7 @@
  '(ansi-color-names-vector ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes (quote (deeper-blue)))
  '(font-use-system-font t)
- '(org-agenda-files (quote ("~/todo/personaltodo.org" "~/todo/daily-timetable.org")))
+ '(org-agenda-files (quote ("~/todo/personaltodo.org" "~/todo/daily-timetable.org" "~/notes/personal.org" "~/notes/tips.org")))
  '(org2blog/wp-blog-alist (quote (("my-blog" :url "http://singhom.com/~omps/wordpress/xmlrpc.php" :username (netrc-get blog "login") :password (netrc-get blog "password")))) t)
  '(weblogger-config-alist (quote (("default" "http://singhom.com/~omps/wordpress/xmlrpc.php" "admin" "" "1")))))
 (set-face-foreground 'minibuffer-prompt "white")
@@ -131,6 +131,12 @@
 (require 'tramp)
 
 ;; auto-complete
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (require 'auto-complete-config)
 (ac-config-default)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

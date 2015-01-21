@@ -72,7 +72,7 @@
 (when (file-exists-p "/usr/share/emacs/site-lisp/bbdb")
   (add-to-list 'load-path "/usr/share/emacs/site-lisp/bbdb")
   (require 'bbdb)
-  (bbdb-initialize 'message 'gnus 'sendmail)
+  (bbdb-initialize 'message 'gnus 'mail)
   (setq bbdb-file "~/bbdb.db")
   (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
   (setq bbdb/mail-auto-create-p t
@@ -115,8 +115,8 @@
 (setq gnus-thread-ignore-subject t)
 
 ; Personal Information
-(setq user-full-name "My Name"
-      user-mail-address "username@gmail.com"
+(setq user-full-name "Om Prakash Singh"
+      user-mail-address "torque.india@gmail.com"
       ;message-generate-headers-first t
       )
 
@@ -126,11 +126,11 @@
 ;; Usage, FROM: My Name <work>
 (setq gnus-posting-styles
       '((".*"
-     (name "My Name"
-          (address "username@gmail.com"
+     (name "Omps"
+          (address "torque.india@gmail.com"
                    (organization "")
                    (signature-file "~/.signature")
-                   ("X-Troll" "Emacs is better than Vi")
+                   ("X-Troll" "Om Ps")
                    )))))
 
 ; You need install the command line brower 'w3m' and Emacs plugin 'w3m'
@@ -138,11 +138,11 @@
 
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "username@gmail.com" nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "torque.india@gmail.com" nil))
       smtpmail-default-smtp-server "smtp.gmail.com"
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 587
-      smtpmail-local-domain "homepc")
+      smtpmail-local-domain "tkpad")
 ;http://www.gnu.org/software/emacs/manual/html_node/gnus/_005b9_002e2_005d.html
 (setq gnus-use-correct-string-widths nil)
-(gnus-compile)
+;;(gnus-compile)

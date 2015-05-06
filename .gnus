@@ -116,7 +116,7 @@
 
 ; Personal Information
 (setq user-full-name "Om Prakash Singh"
-      user-mail-address "torque.india@gmail.com"
+      user-mail-address "omps@omps.in"
       ;message-generate-headers-first t
       )
 
@@ -127,7 +127,7 @@
 (setq gnus-posting-styles
       '((".*"
      (name "Omps"
-          (address "torque.india@gmail.com"
+          (address "omps@omps.in"
                    (organization "")
                    (signature-file "~/.signature")
                    ("X-Troll" "Om Ps")
@@ -137,11 +137,11 @@
 (setq mm-text-html-renderer 'w3m)
 
 (setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "torque.india@gmail.com" nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
+      smtpmail-starttls-credentials '(("mail.omps.in" 465 nil nil))
+      smtpmail-auth-credentials '(("mail.omps.in" 465 "omps@omps.in" nil))
+      smtpmail-default-smtp-server "mail.omps.in"
+      smtpmail-smtp-server "mail.omps.in"
+      smtpmail-smtp-service 465
       smtpmail-local-domain "tkpad")
 ;http://www.gnu.org/software/emacs/manual/html_node/gnus/_005b9_002e2_005d.html
 (setq gnus-use-correct-string-widths nil)

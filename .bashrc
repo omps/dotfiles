@@ -145,3 +145,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 #/home/omps/bin/start_emacs.sh
 source ~/.git-prompt.sh
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

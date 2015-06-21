@@ -1,4 +1,4 @@
-; -*- Lisp -*-
+-*- Lisp -*-
 (require 'nnir)
 
 ;;@see http://www.emacswiki.org/emacs/GnusGmail#toc1
@@ -24,6 +24,32 @@
                       )
              )
 
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "gmail-ompnix"
+                      (nnimap-address "imap.gmail.com")
+                      (nnimap-server-port 993)
+                      (nnimap-stream ssl)
+                      (nnir-search-engine imap)
+                      (nnimap-authinfo-file "~/dotfiles/.authinfo-ompnix.gpg")
+                      ; @see http://www.gnu.org/software/emacs/manual/html_node/gnus/Expiring-Mail.html
+                      ;; press 'E' to expire email
+                      (nnmail-expiry-target "nnimap+gmail:[Gmail]/Trash")
+                      (nnmail-expiry-wait 90)
+                      ))
+
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "omps_in"
+                      (nnimap-address "mail.omps.in")
+                      (nnimap-server-port 993)
+                      (nnimap-stream ssl)
+                      (nnir-search-engine imap)
+                      (nnimap-authinfo-file "~/dotfiles/.authinfo-ompsin.gpg")
+                      ; @see http://www.gnu.org/software/emacs/manual/html_node/gnus/Expiring-Mail.html
+                      ;; press 'E' to expire email
+                      (nnmail-expiry-target "nnimap+gmail:[Gmail]/Trash")
+                      (nnmail-expiry-wait 90)
+                      ))
+
 (setq-default
   gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f  %B%s%)\n"
   gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
@@ -36,7 +62,7 @@
   gnus-sum-thread-tree-vertical "|")
 
 (setq gnus-thread-sort-functions
-      '(
+mm-text-html-renderer      '(
         (not gnus-thread-sort-by-date)
         (not gnus-thread-sort-by-number)
         ))
@@ -92,6 +118,8 @@
 
 (add-hook 'message-mode-hook
           '(lambda ()
+	     (bbdb-initialize 'message)
+	     (bbdb-initialize 'gnus)
              (flyspell-mode t)
              (local-set-key "<TAB>" 'bbdb-complete-name)))
 

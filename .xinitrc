@@ -25,7 +25,8 @@ fi
  # xterm &
 
 ##exec conky
-#exec conky &
+# exec conky &
 exec awesome
-# exec metacity 
+# exec metacity
 exec emacsclient -c
+# exec startlxde

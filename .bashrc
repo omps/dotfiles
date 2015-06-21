@@ -1,6 +1,9 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for example
+. ~/.bash-color-code
+TERM=xterm-256color
+echo "Using $TERM"
 PATH=$PATH:~/bin
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -36,7 +39,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -134,7 +137,6 @@ apt-get () {
 export JDK_HOME=/usr/local/share/jdk1.7.0_45/
 export JAVA_HOME=/usr/local/share/jdk1.7.0_45/bin/
 export PATH=$PATH:/usr/local/share/android-studio/bin
-source ~/perl5/perlbrew/etc/bashrc
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 
@@ -144,7 +146,31 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 #/home/omps/bin/start_emacs.sh
 source ~/.git-prompt.sh
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+PS1='[\W$(__git_ps1 " (%s)")]\$ '
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export ATLAS_TOKEN="t7KuEnsyHkx_agq3DHBaewtDpEQEDDgVg3rFv96eu76hU2ZxNcSeV-_9RjgsxMsdGTo"
+
+# function to create new blog post
+blog () {
+    BLOGDIR=~/octopress
+    cd $BLOGDIR/ && rake new_post["$@"]
+    # Come back to from where you started.
+    cd -
+}
+
+
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;89m\]"
+GREEN="\[\033[0;32m\]"
+
+#PS1="$RED\$(date +%H:%M) \w$YELLOW \$(__git_ps1) $ "
+#PS1='$(date +%H:%M):\w $(__git_ps1)$ '
+
+PS1='\[\e[1;34m\]\w\[\e[m\]\[\e[1;33m\]$(__git_ps1)\[\e[m\]\[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'

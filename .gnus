@@ -1,4 +1,4 @@
--*- Lisp -*-
+;; -*- Lisp -*-
 (require 'nnir)
 
 ;;@see http://www.emacswiki.org/emacs/GnusGmail#toc1
@@ -62,7 +62,7 @@
   gnus-sum-thread-tree-vertical "|")
 
 (setq gnus-thread-sort-functions
-mm-text-html-renderer      '(
+      '(
         (not gnus-thread-sort-by-date)
         (not gnus-thread-sort-by-number)
         ))

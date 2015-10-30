@@ -22,11 +22,12 @@ fi
 # exec fluxbox
 #  exec openbox-session
  # ...or the Window Manager of your choice
- # xterm &
+xterm &
 
 ##exec conky
-# exec conky &
+exec conky &
 exec awesome
+# exec startxfce4 --with-ck-launch > /home/omps/errors-boot.txt 2>&1
 # exec metacity
-exec emacsclient -c
 # exec startlxde
+# exec lightdm

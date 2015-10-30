@@ -168,11 +168,17 @@ function parse_git_branch {
   echo "("${ref#refs/heads/}")"
 }
 
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;89m\]"
-GREEN="\[\033[0;32m\]"
+# Colors are getting a little ugly, disabling it now.
+# RED ="\[\033[0;31m\]"
+# YELLOW="\[\033[0;89m\]"
+# GREEN="\[\033[0;32m\]"
 
-#PS1="$RED\$(date +%H:%M) \w$YELLOW \$(__git_ps1) $ "
-#PS1='$(date +%H:%M):\w $(__git_ps1)$ '
+# #PS1="$RED\$(date +%H:%M) \w$YELLOW \$(__git_ps1) $ "
+# #PS1='$(date +%H:%M):\w $(__git_ps1)$ '
 
-PS1='\[\e[1;34m\]\w\[\e[m\]\[\e[1;33m\]$(__git_ps1)\[\e[m\]\[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
+# PS1='\[\e[1;34m\]\w\[\e[m\]\[\e[1;33m\]$(__git_ps1)\[\e[m\]\[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export WORKON_HOME=~/projects
+source /usr/local/bin/virtualenvwrapper.sh

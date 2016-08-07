@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for example
-. ~/.bash-color-code
+# . ~/.bash-color-code
 TERM=xterm-256color
 echo "Using $TERM"
 # for examples
@@ -34,7 +34,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -142,7 +142,7 @@ export PATH=$PATH:/usr/local/share/android-studio/bin
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 
-source ~/perl5/perlbrew/etc/bashrc
+# source ~/perl5/perlbrew/etc/bashrc
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -181,4 +181,5 @@ function parse_git_branch {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export WORKON_HOME=~/projects
-source /usr/local/bin/virtualenvwrapper.sh
+source /home/omps/.local/bin/virtualenvwrapper.sh
+PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;34m\][\W]\[\033[00m\]$(__git_ps1 "(%s)") $ '

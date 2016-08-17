@@ -1,0 +1,20 @@
+# url
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# image viewer
+image/*; feh -F -d -S filename '%s';
+
+# pdf
+application/pdf; zathura '%s';
+image/pdf; zathura '%s'
+
+# video
+video/* ; mplayer '%s'
+audio/* ; mplayer '%s'
+
+# Office files.
+application/msword; soffice '%s'
+application/rtf; soffice '%s'
+text/richtext; soffice '%s'
+application/vnd.ms-excel; soffice '%s'
+application/vnd.ms-powerpoint; soffice '%s'

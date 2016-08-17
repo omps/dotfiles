@@ -182,4 +182,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export WORKON_HOME=~/projects
 source /home/omps/.local/bin/virtualenvwrapper.sh
-PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;34m\][\W]\[\033[00m\]$(__git_ps1 "(%s)") $ '
+#PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;34m\][\W]\[\033[00m\]$(__git_ps1 "(%s)") $ '
+
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+LC_ALL=en_US.UTF-8 . /home/omps/.local/lib/python3.5/site-packages/powerline/bindings/shell/powerline.sh
+LANG=en_US.UTF-8

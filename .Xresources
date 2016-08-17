@@ -8,6 +8,7 @@ XTerm*foreground: rgb:b2/b2/b2
 XTerm*background: rgb:08/08/08
 XTerm*color0: rgb:28/28/28
 ! Font configuration
+! find font using fc-match mono
 xterm*faceName: Andale Mono:size=10
 xterm*font: 7x13
 xterm*bellIsUrgent: true

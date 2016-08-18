@@ -1,6 +1,7 @@
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.local/bin:$PATH" # Add powerline PATH for scripting
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/omps/.zshrc'
 
@@ -20,3 +21,4 @@ promptinit
 # This will set the default prompt to the walters theme
 prompt walters
 . /home/omps/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+export XENVIRONMENT="${HOME}/.Xresources"

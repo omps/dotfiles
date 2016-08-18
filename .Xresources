@@ -1,3 +1,4 @@
+! run xrdb -merge ~/.Xresources to make the change take effect
 xterm*termName: xterm-256color
 XTerm*locale: true
 XTerm*metaSendsEscape: true
